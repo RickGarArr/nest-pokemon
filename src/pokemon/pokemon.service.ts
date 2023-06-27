@@ -4,6 +4,7 @@ import { UpdatePokemonDto } from './dto/update-pokemon.dto';
 import { Pokemon } from './entities/pokemon.entity';
 import { Model, MongooseError, isValidObjectId } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
+import { PaginationDTO } from 'src/common/dto/pagination.dto';
 
 @Injectable()
 export class PokemonService {
@@ -21,8 +22,8 @@ export class PokemonService {
     }
   }
 
-  findAll() {
-    return this.pokemonModel.find();
+  findAll({ limit, offset }: PaginationDTO) {
+    return this.pokemonModel.find().skip(offset).limit(limit).sort({ number: 1 }).select('-__v');
   }
 
   async findOne(term: string): Promise<Pokemon> {
