@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { MongooseModuleOptions, MongooseOptionsFactory } from '@nestjs/mongoose';
 import { ConfigService } from '@nestjs/config';
-import { API_PORT, MONGODB_AUTH_SOURCE, MONGODB_CONNECTION_NAME, MONGODB_DB_NAME, MONGODB_HOST, MONGODB_PASSWORD, MONGODB_PORT, MONGODB_USERNAME, NODE_ENV } from '../env.constants';
+import { MONGODB_AUTH_SOURCE, MONGODB_DB_NAME, MONGODB_HOST, MONGODB_PASSWORD, MONGODB_PORT, MONGODB_USERNAME, NODE_ENV } from '../env.constants';
 
 @Injectable()
 export class MongooseConfigService implements MongooseOptionsFactory {
