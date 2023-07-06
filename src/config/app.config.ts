@@ -13,7 +13,7 @@ import {
 
 export const envConfig = () => ({
     NODE_ENV: process.env.NODE_ENV || DEFAULT_NODE_ENV,
-    API_PORT: process.env[API_PORT] || DEFAULT_API_PORT,
+    API_PORT: process.env.PORT || DEFAULT_API_PORT,
     MONGODB_HOST: process.env[MONGODB_HOST],
     MONGODB_PORT: process.env[MONGODB_PORT],
     MONGODB_USERNAME: process.env[MONGODB_USERNAME],

@@ -18,8 +18,13 @@ async function bootstrap() {
     }
   }));
 
-  const configService = app.get(ConfigService);
+  // to deploy localhost
+  // const configService = app.get(ConfigService);
+  // await app.listen(configService.get(API_PORT));
+
+  const port = +process.env.PORT;
+  await app.listen(port);
+  console.log(`App listen in port: ${port}`);
   
-  await app.listen(configService.get(API_PORT));
 }
 bootstrap();
