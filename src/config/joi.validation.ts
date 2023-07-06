@@ -7,6 +7,5 @@ export const JoiValidationSchema = Joi.object({
     MONGODB_USERNAME: Joi.string().required(),
     MONGODB_PASSWORD: Joi.string().required(),
     MONGODB_DB_NAME: Joi.string().required(),
-    MONGODB_CONNECTION_NAME: Joi.string().required(),
     MONGODB_AUTH_SOURCE: Joi.string().required(),
 });
