@@ -17,6 +17,7 @@ export class MongooseConfigService implements MongooseOptionsFactory {
         } else {
             uri = `mongodb+srv://${this.configService.get(MONGODB_HOST)}`;
         }
+        console.log(uri);
         return {
             uri,
             user: this.configService.getOrThrow(MONGODB_USERNAME),
