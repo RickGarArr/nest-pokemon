@@ -3,7 +3,7 @@ import { DEFAULT_API_PORT } from './env.constants';
 
 export const JoiValidationSchema = Joi.object({
     MONGODB_HOST: Joi.required(),
-    MONGODB_PORT: Joi.number().default(DEFAULT_API_PORT),
+    MONGODB_PORT: Joi.optional().default(DEFAULT_API_PORT),
     MONGODB_USERNAME: Joi.string().required(),
     MONGODB_PASSWORD: Joi.string().required(),
     MONGODB_DB_NAME: Joi.string().required(),
